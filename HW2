@@ -1,0 +1,15 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	cout << "Name: Geoffrey the Giraffe \n"; // stating name. 
+	cout << "" << endl; //line used as a spacer.
+	cout << "Years of age: 66 \n";// staing age of Geoffrey the Giraffe.
+	cout << "" << endl; // line used as a spacer
+	cout << "Favorite thing: Providing toys to children and adults alike, at a highly inflated cost. \n";// Stating favorite thing.
+
+	cin.get();
+	return 0;
+}
