@@ -1,0 +1,44 @@
+#include <iostream>
+
+using namespace std;
+
+int	main()
+{
+	char name [30] = "Geoffrey ";
+	char Mname [30] = "the ";
+	char Lname [30] = "Giraffe ";
+	
+	cout << "Hey there, you can refer to me as ";
+	cout << name;//input char name
+	cout << Mname;// input char Mname
+	cout << Lname << endl;// input char Lname
+	cout << endl;// line used as a spacer
+	
+	cout << "what is your name? \n";// promiting for cin
+	cout << endl;// line used as a spacer
+	cin >> name;// username input
+
+	cout << "Do you know the total amount of US currency most people spend at my store on black friday?" <<endl;
+	cout << endl;//line used as a spacer
+	
+	double Thing1 = 60;
+	double Thing2 = 45;
+	double Thing3 = 180;
+	cout << "Thing1 + Thing2 + Thing3 = " << Thing1 + Thing2 + Thing3 << endl;// adding doubles
+	cout << endl;// line used as a spacer
+	
+	cout << "That's a lot of money! " <<endl;
+	cout << endl;// line used as a spacer
+	
+	cout << "Enter the number of money you are willing to spend on black friday.";
+	int b; //saving price input (cin >> b) for "if than" with statements below.
+	cin >> b; //user price input. 
+	
+	if ( b == 285) cout << name <<" you've got just enough to shop here."; //result if input (cin b) = double
+	if ( b < 285) cout << name <<" you probably shouldn't shop due to financial constraints";//result if input (cin b) < double
+	if ( b > 285) cout << name <<" feel free to spend your excess money of material items.";// result if input (cin b) > double
+
+
+	cin.get();
+	return 0;
+}
