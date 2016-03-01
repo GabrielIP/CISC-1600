@@ -1,0 +1,49 @@
+// Bomb deactivator 
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    
+    int NumberGuessed = 0;
+    int attempts = 8; // attempts
+    int ToGuess = 26;// correct number to be guessed
+    
+    cout <<"Insert agent name: \n";
+    string name; // stores name
+    cin >> name; // name input
+    cout <<"Thank goodness you're here! " << name <<  " we need your help defusing this bomb! \n";
+
+        do {
+
+            cout << name;
+            cout << ", Intelligence tells us that we need to enter a positive number";
+            cout << "between 1 and 50.\n";
+            cout << "You have " << attempts << " chances to defuse the bomb: ";
+    
+            cin >> NumberGuessed;//input 
+            
+            attempts--;//creates a countdown from 8.
+            
+            if (NumberGuessed>45 && NumberGuessed!=26)   cout << "Lower input drastically. \n";// responses to integer entry, && avoids confusion if proper number fits conditon.
+            else if (NumberGuessed>30 && NumberGuessed!=26)   cout << "Lower input \n";
+            else if (NumberGuessed<28 && NumberGuessed!=26)  cout << "Close to proper input code \n";
+            else if (NumberGuessed<=24 && NumberGuessed!=26)  cout << "Close to proper input code \n";
+            else if (NumberGuessed<5 && NumberGuessed!=26)    cout << "Raise input drastically. \n";
+            else if (NumberGuessed<15 && NumberGuessed!=26)	cout << "Raise input. \n";
+            else if (NumberGuessed<20 && NumberGuessed!=26)	cout << "raise input. \n"; 		  // responses to integer entry
+            if (NumberGuessed==26) cout << "Bomb deactivated! \n";
+            
+            if (attempts==0) {
+                cout << "BOOM!";
+                break;
+            }
+            
+        }
+    while (NumberGuessed!=ToGuess);
+    
+
+    return 0;
+}
