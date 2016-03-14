@@ -1,0 +1,55 @@
+//allows for addition,subrations and factorials of two integers
+#include <iostream>
+#include <string>
+using namespace std;
+
+int factorial(int x, int result = 1)//factorial statement applied to x and y
+{
+    if (x == 1) return result;
+    else return factorial(x - 1, x * result);// statement for factorial
+}
+
+int main()
+{
+    int x = 0;//stores x
+    int y = 0;//stores y
+    cout << "Please input value for x:";
+    cin >> x; //input x
+    cout <<"And input value for y:";
+    cin >> y; //input y
+    
+    int operation = 1;
+    while ( operation !=0) // ends while w/ 0
+    {
+        cout << "Choose one:\n";
+        cout << "1) print x+y\n";
+        cout << "2) print x-y\n";
+        cout << "3) print factorial x\n";
+        cout << "4) print factorial y\n";
+        cout << "0) exit program\n";
+        cout << ":";
+        cin >> operation;
+        int output;
+        if (operation == 1)// engages addition
+        {
+            output = (x+y);
+        }
+        else if (operation == 2) //engages subtraction
+        {
+            output = (x-y);
+        }
+        else if (operation == 3)//engages factorial x
+        {		
+            output = factorial(x);
+        }
+        else if (operation == 4)// engages factorial y
+        {
+            output = factorial(y);
+        }
+        else{
+            break; // ends if loop
+        }
+        cout << output << endl;
+    }	
+    return 0;
+}
