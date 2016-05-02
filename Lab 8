@@ -1,0 +1,81 @@
+#include <iostream>
+using namespace std;
+
+
+void outputOne(string names[], int scores[], int index){
+    cout << "#" << index << ": "<<names [index] << " - " << scores[index] << endl;
+}
+
+void outputAll(string names[], int scores[], int size){
+    for(int i=0;i<size;i++){
+        outputOne(names, scores, i);
+    }
+}
+
+int getAverageScore(int scores[],int size){
+    int total = 0;
+    for(int i=0; i<size; i++){
+        total += scores[i];
+    }
+    return total/size;
+}
+
+void newScore(string name[], int scores [],int corNum, int grade){
+    scores[corNum] = grade;
+    cout << "Student" <<name[corNum] << "now has a score of" << scores[corNum];
+ }
+
+int main(){
+    string names[5] = {"Apple","Benjamine","Carrie","Denny","Eliot"};
+    int scores[5] = {100,99,98,97,96};
+    int operation, index;
+    int corNum = 0;
+    int newScore = 0;
+    int grade = 0;
+    bool a = true;
+    do
+        {
+            cout << "What would you like to do next?" << endl;
+            cout << " (1-Output student name/score)" << endl;
+            cout << " (2-Output all names/scores)" << endl;
+            cout << " (3-Output average score)" << endl;
+            cout << " (4-Replace student scores)" << endl;
+            cout << " (anything else-Exit the program)" << endl;
+            cout << "> ";
+            cin >> operation;
+            switch(operation)
+        {
+            case 1:
+                cout << "> Please input student #: ";
+                cin >> index;
+                    if(index>=0 && index < 5)
+                        outputOne(names,scores,index);
+                        else
+                            cout << "Invalid index!" << endl;
+                        break;
+
+            case 2:
+            outputAll(names,scores,5);
+            break;
+
+            case 3:
+                cout << "Average = " << getAverageScore(scores,5) << endl;
+                    break;
+                    default:
+                    a = false;
+                    break;
+                    
+            case 4:
+                cout << "Input the name's corollary number (1-5): ";
+                cin >> corNum;
+                    if(corNum>=0 && corNum < 5) {
+                    cout << "Input new score: ";
+                    cin >> grade;
+                      newScore (names, scores, corNum, grade);
+                        break;
+            }
+    }
+            }
+    while(a);
+    return 0;
+}
